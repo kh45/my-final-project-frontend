@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .login-container {
+  display: flex
+}
+
+.login-image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.login-image {
+  /* height: 80vh; */
+  /* width: 50vw;
+} */
+
+.league-logo {
+  height: 20vh;
+}
+
+.league-logo:hover {
+  cursor: pointer;
+}
+
+.first-pick-container {
+  display: grid;
+}

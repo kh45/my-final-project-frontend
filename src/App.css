@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
 }
 
 .App-logo {
@@ -36,3 +37,102 @@
     transform: rotate(360deg);
   }
 }
+
+.login-container {
+  display: flex
+}
+
+.login-image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.login-image {
+  /* height: 80vh; */
+  width: 50vw;
+}
+
+.navbar {
+  /* position: fixed; */
+  /* width: 100vw; */
+}
+
+/* .tabcontent {
+  display: none;
+} */
+
+.league-logo {
+  height: 20vh;
+}
+
+.league-logo:hover {
+  cursor: pointer;
+}
+
+.first-pick-container {
+  display: grid;
+}
+
+.NBA-home-container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* column-gap: 500px; */
+}
+
+.both-standings {
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+  /* align */
+}
+
+/* .NBA-news-container {
+  height: 100vh;
+} */
+
+.NBA-standings-container {
+  width: 15vw;
+  /* height: 100vh; */
+  /* margin-left: auto; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5vw;
+}
+
+.NBAplayers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 5vw;
+  row-gap: 5vh;
+  /* margin-right: auto; */
+}
+
+.player-pic {
+  /* top: 1000px; */
+  margin-left: 3vw;
+}
+
+.player-pic:hover {
+  cursor: pointer;
+}
+
+.player-container {
+  position: relative;
+  background-size: 300px 250px; 
+  background-repeat: no-repeat;
+  background-position: -25% 0%
+}
+
+
+.team-logo-backdrop {
+  position: absolute;
+  opacity: 0.7;
+  z-index: -1;
+  width: 300px;
+  height: 230px;
+  top: 1vh;
+  right: 8vw;
+}
+
