@@ -26,26 +26,26 @@ class App extends React.Component {
   // }
   
 
-  logIn = (event) => {
-    event.preventDefault()
-    fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept' : 'application/json'
-        },
-        body: JSON.stringify({
-            "name" : `${event.target.name.value}`,
-            "password" : `${event.target.password.value}`,
-        })
-      })
-    .then(resp => resp.json())
-    .then(user => {
-      console.log(user)
-      this.setState({currentUser: user, currentUsersEvents: user.events})
-    })
-    .catch(() => alert("Please enter a valid username."))
-  }
+  // logIn = (event) => {
+  //   event.preventDefault()
+  //   fetch('http://localhost:3000/login', {
+  //       method: 'POST',
+  //       headers: {
+  //           'Content-Type': 'application/json',
+  //           'Accept' : 'application/json'
+  //       },
+  //       body: JSON.stringify({
+  //           "name" : `${event.target.name.value}`,
+  //           "password" : `${event.target.password.value}`,
+  //       })
+  //     })
+  //   .then(resp => resp.json())
+  //   .then(user => {
+  //     console.log(user)
+  //     this.setState({currentUser: user, currentUsersEvents: user.events})
+  //   })
+  //   .catch(() => alert("Please enter a valid username."))
+  // }
 
   
   render() {
@@ -54,10 +54,9 @@ class App extends React.Component {
   
   return (
       <Router>
-          <NavBar />
+        <Route path="/" render={() => localStorage.getItem('user') ? <NavBar />  : null }></Route>
         <div className="App">
-        <Route exact path="/">
-          {this.props.currentUser ? <Redirect to='/home' />  : <Login/> }
+        <Route exact path="/" render={() => localStorage.getItem('user') ? <Redirect to='/home' />  : <Login/> }>
         </Route>
         <Route exact path="/home">
           <Home />
@@ -85,10 +84,5 @@ const mapStateToProps = state => {
     currentUser: state.login.currentUser
   }
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     currentUser: state.currentUser
-//   }
 
 export default connect(mapStateToProps, null)(App)

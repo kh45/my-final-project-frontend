@@ -1,12 +1,19 @@
 import React from 'react'
+import { compose } from 'redux'
 import { connect } from 'react-redux';
 // import { login } from '../actions/login';
 // import Leaguepick from '../components/leaguepick';
 // import UserProfile from '../components/UserProfile'
 // import { Redirect } from 'react-router-dom'
+import { Link, withRouter} from 'react-router-dom'
 
 class NavBar extends React.Component {
     
+  logOut = () => {
+    localStorage.clear()
+    console.log(this.props)
+    this.props.history.push("/")
+  }
     
 render() {
     return(
@@ -20,6 +27,7 @@ render() {
             <a className="nav-item nav-link active" href="/nba">NBA <span className="sr-only">(current)</span></a>
             <a className="nav-item nav-link" href="/home">NFL</a>
             <a className="nav-item nav-link" href="/home">EPL</a>
+            <button className="nav-item nav-link btn" onClick={this.logOut}>Logout</button>
             {/* <a className="nav-item nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a> */}
           </div>
         </div>
@@ -33,4 +41,8 @@ const mapStateToProps = state => {
         currentUser: state.login.currentUser
     } 
 }
-export default connect(mapStateToProps, null)(NavBar)
+// export default compose(
+//   withRouter,
+//   connect(mapStateToProps, null)
+// )(NavBar)
+export default withRouter(connect(mapStateToProps, null)(NavBar))

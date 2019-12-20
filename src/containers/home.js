@@ -4,20 +4,37 @@ import { connect } from 'react-redux';
 // import Leaguepick from '../components/leaguepick';
 import UserProfile from '../components/UserProfile'
 import { Redirect } from 'react-router-dom'
+import Loader from '../components/GridLoader'
 
 class Home extends React.Component {
+
+    state = {
+        user: null
+    }
+
+
+    componentDidMount() {
+        if (localStorage.getItem('user')) {
+            fetch(`http://localhost:3000/users/${localStorage.getItem('user')}`)
+            .then(resp => resp.json())
+            .then(resp => this.setState({user: resp}))
+        }
+    }
     
     
 render() {
     return(
-        <div>{this.props.currentUser.leagues.length === 0 ? <Redirect to='/pickleagues'/> : <UserProfile />}</div>
+        <div>
+            {this.state.user == null ? <Loader /> : <UserProfile />}
+        </div>
+        // <div>{this.props.currentUser.leagues.length === 0 ? <Redirect to='/pickleagues'/> : <UserProfile />}</div>
     )
 }
 
 }
-const mapStateToProps = state => {
+{/* const mapStateToProps = state => {
     return {
         currentUser: state.login.currentUser
     } 
-}
-export default connect(mapStateToProps, null)(Home)
+} */}
+export default connect(null, null)(Home)

@@ -24,7 +24,10 @@ class NbaPlayerModal extends React.Component {
             <Modal.Body>
               <h4></h4>
               <p>
-              <img src={this.props.player["headshot"]} />
+              {/* <img src={this.props.player["headshot"]} /> */}
+                <div className="modal-background" style={{"background-image": `url(${this.props.player["team"]["logo"]})`}}>
+                  <img src={this.props.player["headshot"]} />
+              </div>
               <h4>College: {this.props.player["college"]} </h4>
               </p>
             </Modal.Body>

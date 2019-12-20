@@ -46,6 +46,7 @@ class Login extends React.Component {
         .then(resp => resp.json())
         .then(user => {
             console.log(user)
+            localStorage.setItem('user', user.id)
             this.props.login(user)})
         .catch(() => alert("Please enter a valid username."))
       }
@@ -59,7 +60,7 @@ render() {
                 {/* <img className="login-image" src={require('../assets/login2.jpg')} /> */}
                 {/* <img className="login-image" src={require('../assets/login3.jpg')} /> */}
             </div>
-            <h2>My Shit App</h2>
+            <h2>My Decent App</h2>
             <form onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
           <input
