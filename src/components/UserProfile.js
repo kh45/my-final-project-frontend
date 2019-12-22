@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import LottieBBall from './LottieBBall'
 
 class UserProfile extends React.Component {
     
@@ -36,7 +37,7 @@ class UserProfile extends React.Component {
 
 render() {
     return(
-        <div>{this.state.user == null ? <div>hello</div> : <div>
+        <div>{this.state.user == null ? <LottieBBall /> : <div>
             {this.state.user.name}'s Dashboard
             <button className="tablink" name="Leagues" onClick={this.showContent}>Leagues</button>
 <button className="tablink" name="Teams" onClick={this.showContent} id="defaultOpen">Teams</button>

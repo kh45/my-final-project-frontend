@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 // import NbaPlayerNews from '../components/NBAPlayerNews'
 // import {viewNBAProfile} from '../actions/viewNBAProfile'
 import Loader from "../components/GridLoader"
+import LottieBBall from '../components/LottieBBall'
 
 class NbaPlayerProfile extends React.Component {
     state = {
@@ -53,7 +54,7 @@ class NbaPlayerProfile extends React.Component {
     render() {
         return(
             <div>
-                {this.state.player == null ? <Loader /> : 
+                {this.state.player == null ? <LottieBBall /> : 
                 <div>
                     <img src={this.state.player.headshot} />
                     <button className="btn btn-primary" onClick={this.followPlayer} >{this.state.user.players.find(player => player["NBARef"] === this.state.player["NBARef"]) ? 'Unfollow' : 'Follow'}

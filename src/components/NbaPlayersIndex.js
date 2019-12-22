@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 // import NbaPlayerModal from './NbaPlayerModal'
 import NbaPlayerModal from './NbaPlayerModal'
 import { useState } from 'react';
-import Loader from './GridLoader'
+// import Loader from './GridLoader'
+import LottieBBall from './LottieBBall'
 
 class NbaPlayersIndex extends React.Component {
 
@@ -108,7 +109,7 @@ class NbaPlayersIndex extends React.Component {
                 </form>
                 
             <div className="NBAplayers-container">
-                {this.state.filteredPlayers.length === 0 ? <Loader /> : this.filterByName().map(player => <div className="player-container" key={player["NBARef"]}><h3>{player["full_name"]}</h3><img className="team-logo-backdrop" src={player["team"]["logo"]} /><img onClick={this.handleClick} id={player["NBARef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /> </div>)}
+                {this.state.filteredPlayers.length === 0 ? <LottieBBall /> : this.filterByName().map(player => <div className="player-container" key={player["NBARef"]}><h3>{player["full_name"]}</h3><img className="team-logo-backdrop" src={player["team"]["logo"]} /><img onClick={this.handleClick} id={player["NBARef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /> </div>)}
             </div>
             {this.state.selectedPlayer == null ? null: <NbaPlayerModal player={this.state.selectedPlayer} show={this.state.modalShow} onHide={this.handleHide} />}
             </div>
