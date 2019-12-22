@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import UserProfile from '../components/UserProfile'
 import { Redirect } from 'react-router-dom'
 import Loader from '../components/GridLoader'
+import LeaguePick from '../components/leaguepick'
 
 class Home extends React.Component {
 
@@ -25,7 +26,7 @@ class Home extends React.Component {
 render() {
     return(
         <div>
-            {this.state.user == null ? <Loader /> : <UserProfile />}
+            {this.state.user == null ? <Loader /> : (this.state.user.leagues.length === 0 ? <Redirect to='/pickleagues' /> :  <UserProfile />)}
         </div>
         // <div>{this.props.currentUser.leagues.length === 0 ? <Redirect to='/pickleagues'/> : <UserProfile />}</div>
     )

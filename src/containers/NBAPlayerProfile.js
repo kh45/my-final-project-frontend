@@ -25,6 +25,12 @@ class NbaPlayerProfile extends React.Component {
     }
 
     followPlayer = () => {
+        let action
+        if (this.state.user.players.find(player => player["NBARef"] === this.state.player["NBARef"])) {
+            action = 'UNfollow'
+        } else {
+            action = 'follow'
+        }
         fetch('http://localhost:3000/addPlayer', {
             method: 'POST',
             headers: {
@@ -33,7 +39,8 @@ class NbaPlayerProfile extends React.Component {
             },
             body: JSON.stringify({
                 "id" : this.state.player["NBARef"],
-                "user": this.state.user["id"]
+                "user": this.state.user["id"],
+                "myAction": action
             })
           })
         .then(resp => resp.json())
