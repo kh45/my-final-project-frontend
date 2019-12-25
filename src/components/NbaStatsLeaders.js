@@ -32,11 +32,12 @@ render() {
 }
 
 }
-// const mapStateToProps = state => {
-//     return {
-//         currentUser: state.login.currentUser
-//     }
-// }
+
+const mapStateToProps = state => {
+    return {
+        stats: state.NBAInfo.stats
+    }
+}
 
 
-export default connect(null, null)(NbaStatsLeaders)
+export default connect(mapStateToProps, null)(NbaStatsLeaders)

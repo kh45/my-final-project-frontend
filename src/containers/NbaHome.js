@@ -7,32 +7,34 @@ import { Link } from 'react-router-dom'
 import NbaNews from '../components/NbaNews'
 import NbaStandings from '../components/NbaStandings'
 import NbaStatsLeaders from '../components/NbaStatsLeaders'
+import { NbaInfo } from '../actions/NbaInfo'
 
 class NbaHome extends React.Component {
 
 
-    // componentDidMount() {
-    //     fetch('http://localhost:3000/NBAHome', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept' : 'application/json'
-    //         },
-    //         body: JSON.stringify({
-    //             "standings" : 'update',
-    //         })
-    //       })
-    //     .then(resp => resp.json())
-    //     .then(resp => {
-    //       console.log(resp)
-    //       // this.grabTeams(resp.standings.conferences[0])
-    //       this.setState({
-    //         westernStandings: this.grabTeams(resp.standings.conferences[0]),
-    //         easternStandings: this.grabTeams(resp.standings.conferences[1]),
-    //         statLeaders : resp.leaders
-    //       })
-    //     })
-    //   }
+    componentDidMount() {
+        fetch('http://localhost:3000/NBAHome', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept' : 'application/json'
+            },
+            body: JSON.stringify({
+                "standings" : 'update',
+            })
+          })
+        .then(resp => resp.json())
+        .then(resp => {
+          console.log(resp)
+          this.props.NbaInfo(resp)
+          // this.grabTeams(resp.standings.conferences[0])
+        //   this.setState({
+            // westernStandings: this.grabTeams(resp.standings.conferences[0]),
+            // easternStandings: this.grabTeams(resp.standings.conferences[1]),
+            // statLeaders : resp.leaders
+        //   })
+        })
+      }
 
 render() {
     return(
@@ -59,4 +61,4 @@ render() {
 // }
 
 
-export default connect(null, null)(NbaHome)
+export default connect(null, { NbaInfo })(NbaHome)

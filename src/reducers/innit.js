@@ -34,13 +34,14 @@ function viewNBAProf(state = {player: null, articles: null}, action) {
     }
 }
 
-function NBAInfo(state = {player: null, articles: null}, action) {
+function NBAInfo(state = {west: null, east: null, leaders: null}, action) {
     console.log(action)
     switch (action.type) {
         case 'GET_NBA_INFO':
             return {
-                player: action.player,
-                articles: action.articles
+                west: action.western,
+                east: action.eastern,
+                stats: action.stats
             }
         default:
             return state
