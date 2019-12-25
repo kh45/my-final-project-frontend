@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
     login: firstReducer,
-    viewNBAProfile: viewNBAProf
+    viewNBAProfile: viewNBAProf,
+    NBAInfo: NBAInfo
 })
 
 export default rootReducer;
@@ -24,6 +25,19 @@ function viewNBAProf(state = {player: null, articles: null}, action) {
     console.log(action)
     switch (action.type) {
         case 'VIEW_NBA_PLAYER':
+            return {
+                player: action.player,
+                articles: action.articles
+            }
+        default:
+            return state
+    }
+}
+
+function NBAInfo(state = {player: null, articles: null}, action) {
+    console.log(action)
+    switch (action.type) {
+        case 'GET_NBA_INFO':
             return {
                 player: action.player,
                 articles: action.articles

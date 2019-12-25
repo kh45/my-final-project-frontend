@@ -27,7 +27,7 @@ class NbaNews extends React.Component {
         //  debugger
          new_articles[indexOfArticle].content = new_content
      })
-     debugger
+    //  debugger
     this.setState({articles: new_articles})
  }
 
@@ -75,9 +75,9 @@ render() {
 }
 
 }
-const mapStateToProps = state => {
-    return {
-        currentUser: state.login.currentUser
-    } 
-}
-export default connect(mapStateToProps, null)(NbaNews)
+// const mapStateToProps = state => {
+//     return {
+//         currentUser: state.login.currentUser
+//     } 
+// }
+export default connect(null, null)(NbaNews)
