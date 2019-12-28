@@ -5,10 +5,17 @@ import { connect } from 'react-redux';
 
 class NbaStandings extends React.Component {
 
-  // state = {
-  //   westernStandings: null,
-  //   easternStandings: null
-  // }
+  state = {
+    allTeams: []
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/teams')
+    .then(resp => resp.json())
+    .then(resp => this.setState({
+      allTeams: resp
+    }))
+  }
 
   // componentDidMount() {
   //   fetch('http://localhost:3000/NBAHome', {
@@ -47,148 +54,276 @@ class NbaStandings extends React.Component {
           <h1 style={{'text': 'align'}}>Standings</h1>
             <div className="NBA-standings-container">
       <div>
-  <h3>Western Conference</h3>
+  <h3>West</h3>
       <table className="table table-hover">
   <thead>
     <tr>
       <th scope="col">Seed</th>
       <th scope="col">Team</th>
-      <th scope="col">Wins</th>
+      <th scope="col">W</th>
+      <th scope="col">L</th>
+      <th scope="col">PCT</th>
+      <th scope="col">GB</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[0].market}</td>
+      {/* <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <p className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[0].name).logo} /> {this.props.westernStandings[0].name}</p> : null}</td> */}
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[1].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[2].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[3].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[4].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[5].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[6].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[7].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[8].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">10</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[9].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">11</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[10].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">12</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[11].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">13</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[12].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">14</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[13].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">15</th>
-      <td colSpan="2">{this.props.westernStandings == null ? null : this.props.westernStandings[14].market}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].name}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].wins}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].losses}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].win_pct}</td>
+      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].games_behind.conference}</td>
     </tr>
   </tbody>
 </table>
 </div>
 <div>
-  <h3>Eastern Conference</h3>
+  <h3>East</h3>
 <table className="table table-hover">
   <thead>
     <tr>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
+      <th scope="col">Seed</th>
+      <th scope="col">Team</th>
+      <th scope="col">W</th>
+      <th scope="col">L</th>
+      <th scope="col">PCT</th>
+      <th scope="col">GB</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[2].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[3].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[4].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[5].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[6].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[7].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[8].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">10</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[9].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">11</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[10].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">12</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[11].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">13</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[12].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">14</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[13].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].games_behind.conference}</td>
     </tr>
     <tr>
       <th scope="row">15</th>
-      <td colSpan="2">{this.props.easternStandings == null ? null : this.props.easternStandings[14].market}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].name}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].wins}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].losses}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].win_pct}</td>
+      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].games_behind.conference}</td>
     </tr>
   </tbody>
 </table>
@@ -207,3 +342,8 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, null)(NbaStandings)
+
+
+{/* <td>{this.props.westernStandings && this.state.allTeams.length > 0 == <div><img src={} /></div> ? null : this.props.westernStandings[0].name}</td> */}
+{/* <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div><img src={this.state.allTeams.find(team => team.name == this.props.westernStandings[0].name).logo} /> {this.props.westernStandings[0].name}</div> : null}</td> */}
+{/* <div><img src={this.state.allTeams.find(team => team.name == this.props.westernStandings[0].name).logo} /> this.props.westernStandings[0].name</div> */}

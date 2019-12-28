@@ -22,14 +22,21 @@ class NbaPlayerModal extends React.Component {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4></h4>
+              {/* <h4></h4> */}
               <p>
               {/* <img src={this.props.player["headshot"]} /> */}
                 <div className="modal-background" style={{"background-image": `url(${this.props.player["team"]["logo"]})`}}>
                   <img src={this.props.player["headshot"]} />
               </div>
+              <div>
+            {/* <h2>FG PCT</h2> */}
+            </div>
+            {this.props.stats ? this.generateStats(this.props.stats.fg_pct) : null}
               <h4>College: {this.props.player["college"]} </h4>
               </p>
+              {/* <div className="modal-info">
+                hello
+              </div> */}
             </Modal.Body>
             <Modal.Footer>
               <Link to={`/nba/players/${this.props.player["NBARef"]}`}> <Button>See Profile</Button></Link>
