@@ -7,9 +7,14 @@ import { Link } from 'react-router-dom'
 import NbaNews from '../components/NbaNews'
 import NbaStandings from '../components/NbaStandings'
 import NbaStatsLeaders from '../components/NbaStatsLeaders'
+import NbaUpcomingGames from '../components/NbaUpcomingGames'
 import { NbaInfo } from '../actions/NbaInfo'
 
 class NbaHome extends React.Component {
+
+    state = {
+        games: null
+    }
 
 
     componentDidMount() {
@@ -26,6 +31,7 @@ class NbaHome extends React.Component {
         .then(resp => resp.json())
         .then(resp => {
           console.log(resp)
+          this.setState({games: resp.games.games})
           this.props.NbaInfo(resp)
           // this.grabTeams(resp.standings.conferences[0])
         //   this.setState({
@@ -43,6 +49,7 @@ render() {
             <NbaNews />
             <Link to="/nba/players"><button>View the PLayers</button></Link>
             </div>
+            <NbaUpcomingGames games={this.state.games} />
             <NbaStandings />
             <NbaStatsLeaders />
         </div>
