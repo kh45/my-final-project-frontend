@@ -200,7 +200,8 @@ tr {
 
 .user-dashboard {
   display: grid;
-  grid-template-columns: 25% 25% 50%;
+  /* grid-template-columns: 25% 25% 50%; */
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* .user-player-picture {

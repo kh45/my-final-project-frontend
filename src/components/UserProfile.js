@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import LottieBBall from './LottieBBall'
+import { Link } from 'react-router-dom'
 
 class UserProfile extends React.Component {
     
@@ -54,7 +55,7 @@ render() {
                     </div>
                     <div className="user-players dash-section">
                     <h3>Your Players</h3>
-                    {this.state.user.players.map(player => <div><h4>Latest News</h4><img className="user-player-picture" src={player.headshot} /> <hr /> </div>)}
+                    {this.state.user.players.map(player => <div><h4>Latest News</h4><img className="user-player-picture" src={player.headshot} /> <Link to={`/nba/players/${player["sportradarRef"]}`}> <button className="btn btn-primary">See Profile</button></Link><hr /> </div>)}
                     </div>
                 </div>
             </div>}
