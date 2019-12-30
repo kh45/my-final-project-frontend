@@ -16,7 +16,6 @@ class NbaNews extends React.Component {
      fetch('https://newsapi.org/v2/everything?domains=nba.com&apiKey=f44ccf725ca9471596da059a5defc2fc')
      .then(resp => resp.json())
      .then(resp => this.cleanArticles(resp.articles))
-     this.setState({activeIndex:0})
  }
 
  cleanArticles(array) {
