@@ -31,13 +31,29 @@ class NbaNews extends React.Component {
     this.setState({articles: new_articles})
  }
 
+//  generateSlides = () => {
+//    debugger
+//    this.state.articles.map(article => {
+//      return (
+//       <div className="carousel-item">
+//       <img className="d-block w-100" src={article.urlToImage} alt="Second slide" />
+//       <div className="carousel-caption d-none d-md-block">
+//     <h5>{article.title}</h5>
+//     <p>{article.content} <button className = 'btn btn-primary'>Read More</button></p>
+//   </div>
+//     </div>
+//      )
+//    } )
+//  }
+
 render() {
     return(
             <div className="NBA-news-container"><h1>NEWS</h1>{this.state.articles.length === 0 ? <div>No news</div> : <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
   <ol className="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    {this.state.articles.slice(1).map(article => <li data-target="#carouselExampleIndicators" data-slide-to={this.state.articles.indexOf(article).toString()}></li>)}
+    {/* <li data-target="#carouselExampleIndicators" data-slide-to={this.state.articles.indexOf(article).toString()}></li> */}
+    
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active">
@@ -47,20 +63,15 @@ render() {
     <p>{this.state.articles[0].content} <button className = 'btn btn-primary'>Read More</button></p>
   </div>
     </div>
-    <div className="carousel-item">
-      <img className="d-block w-100" src={this.state.articles[1].urlToImage} alt="Second slide" />
+    {this.state.articles.slice(1).map(article => {
+     return (
+      <div className="carousel-item">
+      <img className="d-block w-100" src={article.urlToImage} alt="Second slide" />
       <div className="carousel-caption d-none d-md-block">
-    <h5>{this.state.articles[1].title}</h5>
-    <p>{this.state.articles[1].content} <button className = 'btn btn-primary'>Read More</button></p>
+    <h5>{article.title}</h5>
+    <p>{article.content} <button className = 'btn btn-primary'>Read More</button></p>
   </div>
-    </div>
-    <div className="carousel-item">
-      <img className="d-block w-100" src={this.state.articles[2].urlToImage} alt="Third slide" />
-      <div className="carousel-caption d-none d-md-block">
-    <h5>{this.state.articles[2].title}</h5>
-    <p>{this.state.articles[2].content} <button className = 'btn btn-primary'>Read More</button></p>
-  </div>
-    </div>
+     </div>)})}
   </div>
   <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>

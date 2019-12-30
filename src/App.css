@@ -197,3 +197,13 @@ tr {
   display: grid;
   grid-template-columns: 15% 1fr 1fr;
 }
+
+.user-dashboard {
+  display: grid;
+  grid-template-columns: 25% 25% 50%;
+}
+
+/* .user-player-picture {
+
+} */
+
