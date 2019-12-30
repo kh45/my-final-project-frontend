@@ -20,7 +20,16 @@ class NbaPlayerProfile extends React.Component {
         fetch(`http://localhost:3000/users/${localStorage.getItem('user')}`)
         .then(resp => resp.json())
         .then(resp => this.setState({user: resp}))
-        fetch(`http://localhost:3000/players/${this.props.match.params.id}`)
+        fetch(`http://localhost:3000/players/${this.props.match.params.id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept' : 'application/json'
+            },
+            body: JSON.stringify({
+                "myOrigin" : 'profile'
+            })
+        })
         .then(resp => resp.json())
         .then(resp => this.setState({player: resp.player, articles: resp.articles}))
     }
@@ -53,12 +62,21 @@ class NbaPlayerProfile extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="profile-container">
                 {this.state.player == null ? <LottieBBall /> : 
-                <div>
+                <div className="profile-header" style={{"background-image": `linear-gradient(#${this.state.player.team.primaryColor}, #${this.state.player.team.secondaryColor})`}}>
                     <img src={this.state.player.headshot} />
+                    <div>
+                    <h3>{this.state.player.full_name}</h3>
+                    <h4>#{this.state.player.jersey_number}</h4>
+                    </div>
+                    <div>
+                    <h3>STATS</h3>
+                    <h3>STATS</h3>
+                    <h3>STATS</h3>
                     <button className="btn btn-primary" onClick={this.followPlayer} >{this.state.user.players.find(player => player["NBARef"] === this.state.player["NBARef"]) ? 'Unfollow' : 'Follow'}
                     </button>
+                    </div>
                 </div>}
                 {this.makeNews()}
             </div>
