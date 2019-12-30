@@ -201,10 +201,49 @@ tr {
 .user-dashboard {
   display: grid;
   /* grid-template-columns: 25% 25% 50%; */
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 /* .user-player-picture {
 
 } */
 
+.top-headline-img {
+  height: 10vh;
+  width: auto;
+}
+
+.dashboard-news {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+/* .top-headline-news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+
+/* .top-headline-news {
+  margin: 0px;
+} */
+
+.user-player-picture {
+  height: 95px;
+  width: 130px;
+}
+
+
+.upcoming-games {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.daily-games {
+  display: flex;
+  border: 1px solid red
+}
+
+.schedule-img {
+  height: 8vh;
+  width: auto;
+}

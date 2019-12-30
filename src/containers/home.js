@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux';
 // import { login } from '../actions/login';
 // import Leaguepick from '../components/leaguepick';
-import UserProfile from '../components/UserProfile'
+// import UserProfile from '../components/UserProfile'
+import UserProfile from './UserProfile'
 import { Redirect } from 'react-router-dom'
 // import Loader from '../components/GridLoader'
 import LeaguePick from '../components/leaguepick'
