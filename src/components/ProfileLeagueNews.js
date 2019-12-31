@@ -49,11 +49,11 @@ render() {
     return(
         
         <div className="user-leagues dash-section">
-                        <h3>Your Leagues</h3>
-                        {this.props.user.leagues.map(league => <h4>{league.name}</h4>)}
+                        {/* <h3>Your Leagues</h3> */}
+                        {/* {this.props.user.leagues.map(league => <h4>{league.name}</h4>)} */}
                         <h4 className="jello" >Top Headlines:</h4>
                         <div className="dashboard-news">
-    {this.state.news == null ? 'No News' : this.state.news.map(article => <div className="top-headline-news"><img className="top-headline-img" align='left' src={article.urlToImage}/><p>{article.content.split('[+')[0]}</p><hr /></div>)}
+    {this.state.news == null ? 'No News' : this.state.news.map(article => <div className="top-headline-news"><img className="top-headline-img" align='left' src={article.urlToImage}/><p>{article.content.split('[+')[0]}</p><button className="btn btn-primary article-btn">Read More</button> </div>)}
                     </div>
                     <h4>UPCOMING GAMES:</h4>
                     <div className="upcoming-games">

@@ -30,7 +30,7 @@ class ProfilePlayerNews extends React.Component {
                 console.log('hello')
         }
         // debugger
-        return this.props.user.players.filter(player => player["team_id"] > team_range[0] && player["team_id"] < team_range[1]).map(player => <div key={player["sportradarRef"]}><h4>Latest News</h4><img className="user-player-picture" src={player.headshot} /> <Link to={`/${this.props.league.toLowerCase()}/players/${player["sportradarRef"]}`}> <button className="btn btn-primary">See Profile</button></Link><hr /> </div>)
+        return this.props.user.players.filter(player => player["team_id"] > team_range[0] && player["team_id"] < team_range[1]).map(player => <div key={player["sportradarRef"]}><h4>{player["full_name"]}</h4><img className="user-player-picture" src={player.headshot} /> <Link to={`/${this.props.league.toLowerCase()}/players/${player["sportradarRef"]}`}> <button className="btn btn-primary">See Profile</button></Link><hr /> </div>)
     }
 
 render() {

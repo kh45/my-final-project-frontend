@@ -51,12 +51,12 @@ addThisLeague = (league) => {
     
 render() {
     return(
-        <div>
+        <div className="pick-leagues-container">
             <h1>Pick Your Leagues</h1>
             <div className="first-pick-container">
-                <div className="pick-logo-container"><img align="left" className="league-logo nba-pick-logo" alt="NBA" src={require('../assets/nbalogo.png')} onClick={this.whichLeague} /> <p className="pick-name">NBA</p> </div>
-                <div className="pick-logo-container"><img className="league-logo nfl-pick-logo" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /><p className="pick-name">NFL</p> </div> 
-                <div className="pick-logo-container"><img className="league-logo epl-pick-logo" alt='EPL' src={require('../assets/PremierLogo.png')} onClick={this.whichLeague} /> <h4 className="pick-name">EPL</h4></div>
+                <div className="pick-logo-container"><img align="left" className="league-logo nba-pick-logo" alt="NBA" src={require('../assets/nbalogo.png')} onClick={this.whichLeague} /> <p className="pick-name pick-name-nba">NBA</p> </div>
+                <div className="pick-logo-container"><img className="league-logo nfl-pick-logo" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /><p className="pick-name pick-name-nfl">NFL</p> </div> 
+                <div className="pick-logo-container"><img className="league-logo epl-pick-logo" alt='EPL' src={require('../assets/PremierLogo.png')} onClick={this.whichLeague} /> <h4 className="pick-name pick-name-epl">EPL</h4></div>
             </div>
             <Link to="/home"><button>I'm done</button></Link>
         </div>

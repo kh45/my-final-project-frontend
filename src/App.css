@@ -69,17 +69,18 @@
 
 .nba-pick-logo {
   height: 20vh;
-  animation: Slide_Up 1.4s ease;
+  animation: Slide_Up 1.4s;
 }
 
 .nfl-pick-logo {
   height: 20vh;
-  animation: Slide_Up 1.9s ease;
+  animation: Slide_Up 3.4s;
+  /* animation-delay: 2.5s */
 }
 
 .epl-pick-logo {
   height: 20vh;
-  animation: Slide_Up 2.4s ease;
+  animation: Slide_Up 4.5s;
 }
 
 .pick-logo-container {
@@ -90,6 +91,19 @@
 .pick-name {
   margin-top: auto;
   margin-bottom: auto;
+  font-size: 5em;
+}
+
+.pick-name-nba {
+  animation: Slide_Left 1.4s
+}
+
+.pick-name-nfl {
+  animation: Slide_Left 3.4s
+}
+
+.pick-name-epl {
+  animation: Slide_Left 4.5s
 }
 
 .league-logo:hover {
@@ -98,6 +112,9 @@
 
 .first-pick-container {
   display: grid;
+  /* margin: auto; */
+  /* margin-right: auto; */
+  /* align-content: center; */
 }
 
 .NBA-home-container {
@@ -244,16 +261,23 @@ tr {
 .dashboard-news {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 2vh;
 }
 
-/* .top-headline-news {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-} */
+.top-headline-news {
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* position: relative; */
+  border-bottom: 1px solid green;
+}
 
-/* .top-headline-news {
-  margin: 0px;
-} */
+.top-headline-news:hover {
+  transform: scale(1.1); 
+}
+
+.article-btn {
+  margin-bottom: 0;
+}
 
 .user-player-picture {
   height: 95px;
@@ -298,4 +322,29 @@ tr {
   100% {
     transform: translateY(0);
   }
+}
+
+@keyframes Slide_Left {
+  0% {
+    transform: translateX(250px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* .horizontal-break {
+  position: absolute;
+  margin-top: 7vh;
+} */
+
+.user-leagues {
+  border: 1px solid red;
+  background-color: gray;
+}
+
+
+.user-players {
+  border: 1px solid green;
+  background-color: yellow;
 }

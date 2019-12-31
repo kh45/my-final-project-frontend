@@ -8,6 +8,7 @@ import NflNews from '../components/NflNews'
 import NbaStandings from '../components/NbaStandings'
 import NbaStatsLeaders from '../components/NbaStatsLeaders'
 import { NbaInfo } from '../actions/NbaInfo'
+import LottieBBall from '../components/LottieBBall'
 
 class NbaUpcomingGames extends React.Component {
 
@@ -34,7 +35,7 @@ render() {
             <label for="start">Pick a Date:</label>
             <input type='date' id="start" name="game-day" value="2019-12-25" />
             <div className="Nba-upcoming-games">
-                {this.props.games == null ? 'No Games' : this.props.games.map(game => <div className="daily-games"><img className="homepage-tm-img" src={this.findTeam(game.away.id)} /> <p>VS</p> <img className="homepage-tm-img" src={this.findTeam(game.home.id)} /> </div>)}
+                {this.props.games == null ? <LottieBBall /> : this.props.games.map(game => <div className="daily-games"><img className="homepage-tm-img" src={this.findTeam(game.away.id)} /> <p>VS</p> <img className="homepage-tm-img" src={this.findTeam(game.home.id)} /> </div>)}
             </div>
             </div>
 

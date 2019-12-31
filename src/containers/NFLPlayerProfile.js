@@ -76,7 +76,7 @@ class NflPlayerProfile extends React.Component {
                     <h3>STATS</h3>
                     <h3>STATS</h3>
                     <h3>STATS</h3>
-                    <button className="btn btn-primary" onClick={this.followPlayer} >{this.state.user.players.find(player => player["sportradarRef"] === this.state.player["sportradarRef"]) ? 'Unfollow' : 'Follow'}
+                    <button className="btn btn-primary" onClick={this.followPlayer} >{this.state.user == null ? null : this.state.user.players.find(player => player["sportradarRef"] === this.state.player["sportradarRef"]) ? 'Unfollow' : 'Follow'}
                     </button>
                     </div>
                 </div>}
