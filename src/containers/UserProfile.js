@@ -12,7 +12,8 @@ class UserProfile extends React.Component {
     
     state = {
         user: null,
-        league: null
+        league: null,
+        changer: 0
     }
 
     componentDidMount() {
@@ -25,7 +26,7 @@ class UserProfile extends React.Component {
     }
 
     changeDashboard = (event) => {
-        this.setState({league: event.target.value})
+        this.setState({league: event.target.value, changer: this.state.changer + 1})
     }
 
 render() {
@@ -39,9 +40,9 @@ render() {
                     <option value="NFL">NFL</option>
                 </select>
                 <div className="user-dashboard">
-                    <ProfileLeagueNews user={this.state.user} key={this.state.league} league={this.state.league} />
+                    <ProfileLeagueNews user={this.state.user} key={this.state.changer} league={this.state.league} />
                     {/* <ProfileTeamNews user={this.state.user}/> */}
-                    <ProfilePlayerNews user={this.state.user} />
+                    <ProfilePlayerNews user={this.state.user} key={this.state.changer + 1} league={this.state.league}/>
                 </div>
             </div>}
         </div>

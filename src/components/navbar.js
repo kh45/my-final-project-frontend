@@ -27,6 +27,7 @@ render() {
             <a className="nav-item nav-link active" href="/nba">NBA <span className="sr-only">(current)</span></a>
             <a className="nav-item nav-link" href="/nfl">NFL</a>
             <a className="nav-item nav-link" href="/home">EPL</a>
+            <a className="nav-item nav-link" href="/pickleagues">Add Leagues</a>
             <button className="nav-item nav-link btn" onClick={this.logOut}>Logout</button>
             {/* <a className="nav-item nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a> */}
           </div>

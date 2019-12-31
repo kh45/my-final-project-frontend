@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Loader from "../components/GridLoader"
 import LottieBBall from '../components/LottieBBall'
 
-class NbaPlayerProfile extends React.Component {
+class NflPlayerProfile extends React.Component {
     state = {
         player: null,
         articles: [],
@@ -28,16 +28,17 @@ class NbaPlayerProfile extends React.Component {
             },
             body: JSON.stringify({
                 "myOrigin" : 'profile',
-                "league": 'NBA'
+                "league" : 'NFL'
             })
         })
         .then(resp => resp.json())
-        .then(resp => this.setState({player: resp.player, articles: resp.articles}))
+        // .then(resp => this.setState({player: resp.player, articles: resp.articles}))
+        .then(resp => this.setState({player: resp.player}))
     }
 
     followPlayer = () => {
         let action
-        if (this.state.user.players.find(player => player["NBARef"] === this.state.player["NBARef"])) {
+        if (this.state.user.players.find(player => player["sportradarRef"] === this.state.player["sportradarRef"])) {
             action = 'UNfollow'
         } else {
             action = 'follow'
@@ -65,7 +66,7 @@ class NbaPlayerProfile extends React.Component {
         return(
             <div className="profile-container">
                 {this.state.player == null ? <LottieBBall /> : 
-                <div className="profile-header" style={{"background-image": `linear-gradient(#${this.state.player.team.primaryColor}, #${this.state.player.team.secondaryColor})`}}>
+                <div className="profile-header" style={{"background-image": `linear-gradient(#1c5b86, #237341)`}}>
                     <img src={this.state.player.headshot} />
                     <div>
                     <h3>{this.state.player.full_name}</h3>
@@ -75,11 +76,11 @@ class NbaPlayerProfile extends React.Component {
                     <h3>STATS</h3>
                     <h3>STATS</h3>
                     <h3>STATS</h3>
-                    <button className="btn btn-primary" onClick={this.followPlayer} >{this.state.user.players.find(player => player["NBARef"] === this.state.player["NBARef"]) ? 'Unfollow' : 'Follow'}
+                    <button className="btn btn-primary" onClick={this.followPlayer} >{this.state.user.players.find(player => player["sportradarRef"] === this.state.player["sportradarRef"]) ? 'Unfollow' : 'Follow'}
                     </button>
                     </div>
                 </div>}
-                {this.makeNews()}
+                {/* {this.makeNews()} */}
             </div>
         )
     }
@@ -92,4 +93,4 @@ class NbaPlayerProfile extends React.Component {
 // }
 
 // export default connect(null, null)(NbaPlayerProfile)
-export default NbaPlayerProfile
+export default NflPlayerProfile

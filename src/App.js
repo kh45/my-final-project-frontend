@@ -17,6 +17,7 @@ import NbaPlayersIndex from './components/NbaPlayersIndex'
 import NFLPlayersIndex from './components/NFLPlayersIndex'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NbaPlayerProfile from './containers/NBAPlayerProfile'
+import NFLPlayerProfile from './containers/NFLPlayerProfile'
 
 class App extends React.Component {
   
@@ -79,6 +80,7 @@ class App extends React.Component {
           <NFLPlayersIndex />
         </Route>
         <Route exact path='/nba/players/:id' render={routerProps => <NbaPlayerProfile {...routerProps} /> } />
+        <Route exact path='/nfl/players/:id' render={routerProps => <NFLPlayerProfile {...routerProps} /> } />
         </div>
       </Router>
   );

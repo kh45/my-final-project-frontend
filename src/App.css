@@ -264,3 +264,13 @@ tr {
   height: 12vh;
   width: auto;
 }
+
+/* @-moz-keyframes slidein {
+  from {margin-bottom:0%;}
+  to {margin-top:35%;}
+}
+
+@-webkit-keyframes slidein {
+  from {margin-bottom:0%;}
+  to {margin-top:15%;}
+} */

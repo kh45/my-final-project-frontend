@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import { login } from '../actions/login';
 // import { Link } from 'react-router-dom'
 // import NbaPlayerModal from './NbaPlayerModal'
-import NbaPlayerModal from './NbaPlayerModal'
+import NflPlayerModal from './NflPlayerModal'
 import { useState } from 'react';
 // import Loader from './GridLoader'
 import LottieBBall from './LottieBBall'
@@ -30,7 +30,7 @@ class NFLPlayersIndex extends React.Component {
       this.setState({
         setModalShow: true,
         modalShow: true,
-        selectedPlayer: this.state.allPlayers.find(player => player["NBARef"] == event.target.id)
+        selectedPlayer: this.state.allPlayers.find(player => player["sportradarRef"] == event.target.id)
       })
   }
 
@@ -114,9 +114,9 @@ class NFLPlayersIndex extends React.Component {
                 </form>
                 
             <div className="NBAplayers-container">
-                {this.state.filteredPlayers.length === 0 ? <LottieBBall /> : this.filterByName().map(player => <div className="player-container" key={player["NBARef"]}><h3>{player["full_name"]}</h3><img className="team-logo-backdrop" src={player["team"]["logo"]} /><img onClick={this.handleClick} id={player["NBARef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /> </div>)}
+                {this.state.filteredPlayers.length === 0 ? <LottieBBall /> : this.filterByName().map(player => <div className="player-container" key={player["sportradarRef"]}><h3>{player["full_name"]}</h3><img className="team-logo-backdrop" src={player["team"]["logo"]} /><img onClick={this.handleClick} id={player["sportradarRef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /> </div>)}
             </div>
-            {this.state.selectedPlayer == null ? null: <NbaPlayerModal player={this.state.selectedPlayer} show={this.state.modalShow} onHide={this.handleHide} />}
+            {this.state.selectedPlayer == null ? null: <NflPlayerModal player={this.state.selectedPlayer} show={this.state.modalShow} onHide={this.handleHide} />}
             </div>
         )
     }

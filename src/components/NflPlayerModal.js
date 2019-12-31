@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import {viewNBAProfile} from '../actions/viewNBAProfile'
+// import {viewNBAProfile} from '../actions/viewNBAProfile'
 
-class NbaPlayerModal extends React.Component {
+class NflPlayerModal extends React.Component {
 
   state = {
     stats: null
@@ -20,8 +20,7 @@ class NbaPlayerModal extends React.Component {
           'Accept' : 'application/json'
       },
       body: JSON.stringify({
-          "myOrigin" : 'modal',
-          "league": 'NBA'
+          "myOrigin" : 'modal'
       })
     })
     .then(resp => resp.json())
@@ -49,12 +48,12 @@ class NbaPlayerModal extends React.Component {
                   <img src={this.props.player["headshot"]} />
               </div>
               <div className="player-modal-summary">
-        <h5>PPG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.points}</h5>
-            <h5>RPG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.rebounds}</h5>
-            <h5>APG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.assists}</h5>
-            <h5>FG PCT: {this.state.stats === null ? null : (this.state.stats.seasons[0].teams[0].average.field_goals_made / this.state.stats.seasons[0].teams[0].average.field_goals_att) }</h5>
+        <h5>PPG: {this.state.stats === null ? null : '5000 yards'}</h5>
+            <h5>RPG: {this.state.stats === null ? null : '5000 yards'}</h5>
+            <h5>APG: {this.state.stats === null ? null : '5000 yards'}</h5>
+            <h5>FG PCT: {this.state.stats === null ? null : '5000 yards' }</h5>
             </div>
-            {this.props.stats ? this.generateStats(this.props.stats.fg_pct) : null}
+            {this.props.stats ? '5000 yards' : null}
               <h4 className="player-college">College: {this.props.player["college"]} </h4>
               </div>
               {/* <div className="modal-info">
@@ -62,7 +61,7 @@ class NbaPlayerModal extends React.Component {
               </div> */}
             </Modal.Body>
             <Modal.Footer>
-              <Link to={`/nba/players/${this.props.player["sportradarRef"]}`}> <Button>See Profile</Button></Link>
+              <Link to={`/nfl/players/${this.props.player["sportradarRef"]}`}> <Button>See Profile</Button></Link>
             </Modal.Footer>
           </Modal>
         )
@@ -73,4 +72,4 @@ class NbaPlayerModal extends React.Component {
 
 // }
 
-export default connect(null, {viewNBAProfile})(NbaPlayerModal)
+export default connect(null, null)(NflPlayerModal)

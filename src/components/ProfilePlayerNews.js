@@ -14,12 +14,31 @@ class ProfilePlayerNews extends React.Component {
     //     }
     // }
 
+    whichPlayers = (league) => {
+        let team_range;
+        switch (this.props.league) {
+            case 'NBA':
+                team_range = [0, 31]
+                break
+            case 'NFL':
+                team_range = [30, 63]
+                break
+            case 'EPL':
+                team_range = [62, 83]
+                break
+            default:
+                console.log('hello')
+        }
+        // debugger
+        return this.props.user.players.filter(player => player["team_id"] > team_range[0] && player["team_id"] < team_range[1]).map(player => <div key={player["sportradarRef"]}><h4>Latest News</h4><img className="user-player-picture" src={player.headshot} /> <Link to={`/${this.props.league.toLowerCase()}/players/${player["sportradarRef"]}`}> <button className="btn btn-primary">See Profile</button></Link><hr /> </div>)
+    }
+
 render() {
     return(
         
         <div className="user-players dash-section">
                     <h3>Your Players</h3>
-                    {this.props.user.players.map(player => <div><h4>Latest News</h4><img className="user-player-picture" src={player.headshot} /> <Link to={`/nba/players/${player["sportradarRef"]}`}> <button className="btn btn-primary">See Profile</button></Link><hr /> </div>)}
+                    {this.whichPlayers()}
                     </div>
         
     )
