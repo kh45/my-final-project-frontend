@@ -14,7 +14,7 @@ class NbaStatsLeaders extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/players')
+        fetch('http://localhost:3000/NBAPlayers')
         .then(response => response.json())
         .then(response => this.setState({allPlayers: response}))
       }

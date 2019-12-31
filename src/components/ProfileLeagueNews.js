@@ -5,12 +5,21 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 class ProfileLeagueNews extends React.Component {
-
-    state = {
-        news: null,
-        games: null,
-        teams: null
+    constructor(props) {
+        super(props)
+        this.state = {
+            news: null,
+            games: null,
+            teams: null,
+            league: this.props.league
+        }
     }
+
+    // state = {
+    //     news: null,
+    //     games: null,
+    //     teams: null
+    // }
     
     componentDidMount() {
         let league_names = this.props.user.leagues.map(league => league.name)
@@ -22,7 +31,8 @@ class ProfileLeagueNews extends React.Component {
                 'Accept' : 'application/json'
             },
             body: JSON.stringify({
-                "leagues" : league_names
+                // "leagues" : league_names
+                "league" : this.props.league
             })
         })
         .then(resp => resp.json())

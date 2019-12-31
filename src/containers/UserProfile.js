@@ -11,15 +11,21 @@ class UserProfile extends React.Component {
     
     
     state = {
-        user: null
+        user: null,
+        league: null
     }
 
     componentDidMount() {
+        console.log('hello')
         if (localStorage.getItem('user')) {
             fetch(`http://localhost:3000/users/${localStorage.getItem('user')}`)
             .then(resp => resp.json())
-            .then(resp => this.setState({user: resp}))
+            .then(resp => this.setState({user: resp, league: resp.leagues[0].name}))
         }
+    }
+
+    changeDashboard = (event) => {
+        this.setState({league: event.target.value})
     }
 
 render() {
@@ -28,12 +34,12 @@ render() {
             {this.state.user == null ? <LottieBBall /> : 
             <div>
                 <h2>{this.state.user.name}'s Dashboard</h2>
-                <select name="teamFilter" form="teamFilter" onChange={this.filterByTeam} >
+                <select name="teamFilter" form="teamFilter" onChange={this.changeDashboard} >
                     <option value="NBA">NBA</option>
                     <option value="NFL">NFL</option>
                 </select>
                 <div className="user-dashboard">
-                    <ProfileLeagueNews user={this.state.user} />
+                    <ProfileLeagueNews user={this.state.user} key={this.state.league} league={this.state.league} />
                     {/* <ProfileTeamNews user={this.state.user}/> */}
                     <ProfilePlayerNews user={this.state.user} />
                 </div>
