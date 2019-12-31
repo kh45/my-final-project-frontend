@@ -4,6 +4,18 @@ import { login } from '../actions/login';
 import { Link } from 'react-router-dom'
 
 class LeaguePick extends React.Component {
+
+    state = {
+        currentUser: null
+    }
+
+    componentDidMount() {
+        if (localStorage.getItem('user')) {
+            fetch(`http://localhost:3000/users/${localStorage.getItem('user')}`)
+            .then(resp => resp.json())
+            .then(resp => this.setState({currentUser: resp}))
+        }
+    }
     
 whichLeague = (event) => {
     switch(event.target.alt) {
@@ -11,7 +23,7 @@ whichLeague = (event) => {
             this.addThisLeague(event.target.alt)
             break
         case 'NFL':
-            // this.addThisLeague(event.target.alt)
+            this.addThisLeague(event.target.alt)
             break
         case 'EPL':
             console.log('adding the epl')
@@ -30,7 +42,7 @@ addThisLeague = (league) => {
         },
         body: JSON.stringify({
             "League" : league,
-            "User" : this.props.currentUser.id
+            "User" : this.props.currentUser == null ? this.state.currentUser.id : this.props.currentUser.id
         })
       })
     .then(resp => resp.json())
