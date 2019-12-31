@@ -41,7 +41,7 @@ render() {
         <div className="NFL-home-container">
             <div>
             <NflNews />
-            <Link to="/nba/players"><button>View the PLayers</button></Link>
+            <Link to="/nfl/players"><button>View the PLayers</button></Link>
             </div>
             <NbaStandings />
             <NbaStatsLeaders />

@@ -8,7 +8,7 @@ import { useState } from 'react';
 // import Loader from './GridLoader'
 import LottieBBall from './LottieBBall'
 
-class NbaPlayersIndex extends React.Component {
+class NFLPlayersIndex extends React.Component {
 
     state = {
         allPlayers: [],
@@ -21,7 +21,7 @@ class NbaPlayersIndex extends React.Component {
     }
 
    componentDidMount() {
-    fetch('http://localhost:3000/NBAPlayers')
+    fetch('http://localhost:3000/NFLPlayers')
     .then(response => response.json())
     .then(response => this.setState({allPlayers: response, filteredPlayers: response}))
   }
@@ -66,6 +66,7 @@ class NbaPlayersIndex extends React.Component {
 
   handleSubmit = event => {
       event.preventDefault()
+    //   debugger
   }
 
 
@@ -123,4 +124,4 @@ class NbaPlayersIndex extends React.Component {
 
 
 
-export default connect(null, null)(NbaPlayersIndex)
+export default connect(null, null)(NFLPlayersIndex)

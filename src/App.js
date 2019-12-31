@@ -14,6 +14,7 @@ import NavBar from './components/navbar'
 import NbaHome from './containers/NbaHome'
 import NflHome from './containers/NfHome'
 import NbaPlayersIndex from './components/NbaPlayersIndex'
+import NFLPlayersIndex from './components/NFLPlayersIndex'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NbaPlayerProfile from './containers/NBAPlayerProfile'
 
@@ -73,6 +74,9 @@ class App extends React.Component {
         </Route>
         <Route exact path='/nba/players'>
           <NbaPlayersIndex />
+        </Route>
+        <Route exact path='/nfl/players'>
+          <NFLPlayersIndex />
         </Route>
         <Route exact path='/nba/players/:id' render={routerProps => <NbaPlayerProfile {...routerProps} /> } />
         </div>
