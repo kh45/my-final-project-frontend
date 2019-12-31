@@ -36,8 +36,9 @@ render() {
             <div>
                 <h2>{this.state.user.name}'s Dashboard</h2>
                 <select name="teamFilter" form="teamFilter" onChange={this.changeDashboard} >
-                    <option value="NBA">NBA</option>
-                    <option value="NFL">NFL</option>
+                    {this.state.user.leagues.map(league => <option value={league.name}>{league.name}</option>)}
+                    {/* <option value="NBA">NBA</option> */}
+                    {/* <option value="NFL">NFL</option> */}
                 </select>
                 <div className="user-dashboard">
                     <ProfileLeagueNews user={this.state.user} key={this.state.changer} league={this.state.league} />

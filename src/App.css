@@ -62,8 +62,34 @@
   display: none;
 } */
 
-.league-logo {
+/* .league-logo {
   height: 20vh;
+  animation: Slide_Up 2s ease;
+} */
+
+.nba-pick-logo {
+  height: 20vh;
+  animation: Slide_Up 1.4s ease;
+}
+
+.nfl-pick-logo {
+  height: 20vh;
+  animation: Slide_Up 1.9s ease;
+}
+
+.epl-pick-logo {
+  height: 20vh;
+  animation: Slide_Up 2.4s ease;
+}
+
+.pick-logo-container {
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+}
+
+.pick-name {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .league-logo:hover {
@@ -265,12 +291,11 @@ tr {
   width: auto;
 }
 
-/* @-moz-keyframes slidein {
-  from {margin-bottom:0%;}
-  to {margin-top:35%;}
+@keyframes Slide_Up {
+  0% {
+    transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
-@-webkit-keyframes slidein {
-  from {margin-bottom:0%;}
-  to {margin-top:15%;}
-} */

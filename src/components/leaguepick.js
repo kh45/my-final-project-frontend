@@ -11,7 +11,7 @@ whichLeague = (event) => {
             this.addThisLeague(event.target.alt)
             break
         case 'NFL':
-            console.log('adding the nfl')
+            // this.addThisLeague(event.target.alt)
             break
         case 'EPL':
             console.log('adding the epl')
@@ -42,9 +42,9 @@ render() {
         <div>
             <h1>Pick Your Leagues</h1>
             <div className="first-pick-container">
-                <img className="league-logo" alt="NBA" src={require('../assets/nbalogo.png')} onClick={this.whichLeague} /> 
-                <img className="league-logo" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /> 
-                <img className="league-logo" alt='EPL' src={require('../assets/PremierLogo.png')} onClick={this.whichLeague} /> 
+                <div className="pick-logo-container"><img align="left" className="league-logo nba-pick-logo" alt="NBA" src={require('../assets/nbalogo.png')} onClick={this.whichLeague} /> <p className="pick-name">NBA</p> </div>
+                <div className="pick-logo-container"><img className="league-logo nfl-pick-logo" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /><p className="pick-name">NFL</p> </div> 
+                <div className="pick-logo-container"><img className="league-logo epl-pick-logo" alt='EPL' src={require('../assets/PremierLogo.png')} onClick={this.whichLeague} /> <h4 className="pick-name">EPL</h4></div>
             </div>
             <Link to="/home"><button>I'm done</button></Link>
         </div>
