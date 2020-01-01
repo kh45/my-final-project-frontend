@@ -207,7 +207,9 @@ tr {
 
 .micro-logo {
   height: 6vh;
-  width: 6vw
+  width: 6vw;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* td.micro-container {
@@ -215,13 +217,21 @@ tr {
   width: 20% !important;
 } */
 
-/* td {
+td {
   padding: 0 !important;
+  /* margin-right: 0px; */
 }
+
+/* th {
+  padding: 0 !important;
+} */
 
 .squid {
   display: flex;
-} */
+  align-items: center;
+  width: 7vw;
+  /* width: 10% */
+}
 
 .all-stat-container {
   grid-column: 1/3;

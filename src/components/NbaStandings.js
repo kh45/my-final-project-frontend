@@ -69,8 +69,8 @@ class NbaStandings extends React.Component {
   <tbody>
     <tr>
       <th scope="row">1</th>
-      {/* <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <p className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[0].name).logo} /> {this.props.westernStandings[0].name}</p> : null}</td> */}
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[0].name).logo} /> {this.props.westernStandings[0].name}</div> : null}</td>
+      {/* <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].name}</td> */}
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[0].win_pct}</td>
@@ -78,7 +78,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[1].name).logo} /> {this.props.westernStandings[1].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[1].win_pct}</td>
@@ -86,7 +86,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[2].name).logo} /> {this.props.westernStandings[2].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[2].win_pct}</td>
@@ -94,7 +94,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[3].name).logo} /> {this.props.westernStandings[3].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[3].win_pct}</td>
@@ -102,7 +102,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[4].name).logo} /> {this.props.westernStandings[4].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[4].win_pct}</td>
@@ -110,7 +110,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[5].name).logo} /> {this.props.westernStandings[5].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[5].win_pct}</td>
@@ -118,7 +118,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[6].name).logo} /> {this.props.westernStandings[6].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[6].win_pct}</td>
@@ -126,7 +126,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[7].name).logo} /> {this.props.westernStandings[7].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[7].win_pct}</td>
@@ -134,7 +134,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[8].name).logo} /> {this.props.westernStandings[8].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[8].win_pct}</td>
@@ -142,7 +142,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">10</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[9].name).logo} /> {this.props.westernStandings[9].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[9].win_pct}</td>
@@ -150,7 +150,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">11</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[10].name).logo} /> {this.props.westernStandings[10].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[10].win_pct}</td>
@@ -158,7 +158,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">12</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[11].name).logo} /> {this.props.westernStandings[11].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[11].win_pct}</td>
@@ -166,7 +166,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">13</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[12].name).logo} /> {this.props.westernStandings[12].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[12].win_pct}</td>
@@ -174,7 +174,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">14</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[13].name).logo} /> {this.props.westernStandings[13].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[13].win_pct}</td>
@@ -182,7 +182,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">15</th>
-      <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].name}</td>
+      <td>{this.props.westernStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.westernStandings[14].name).logo} /> {this.props.westernStandings[14].name}</div> : null}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].wins}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].losses}</td>
       <td>{this.props.westernStandings == null ? null : this.props.westernStandings[14].win_pct}</td>
@@ -207,7 +207,7 @@ class NbaStandings extends React.Component {
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[0].name).logo} /> {this.props.easternStandings[0].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[0].win_pct}</td>
@@ -215,7 +215,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[1].name).logo} /> {this.props.easternStandings[1].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[1].win_pct}</td>
@@ -223,7 +223,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[2].name).logo} /> {this.props.easternStandings[2].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[2].win_pct}</td>
@@ -231,7 +231,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[3].name).logo} /> {this.props.easternStandings[3].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[3].win_pct}</td>
@@ -239,7 +239,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[4].name).logo} /> {this.props.easternStandings[4].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[4].win_pct}</td>
@@ -247,7 +247,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[5].name).logo} /> {this.props.easternStandings[5].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[5].win_pct}</td>
@@ -255,7 +255,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[6].name).logo} /> {this.props.easternStandings[6].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[6].win_pct}</td>
@@ -263,7 +263,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[7].name).logo} /> {this.props.easternStandings[7].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[7].win_pct}</td>
@@ -271,7 +271,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[8].name).logo} /> {this.props.easternStandings[8].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[8].win_pct}</td>
@@ -279,7 +279,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">10</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[9].name).logo} /> {this.props.easternStandings[9].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[9].win_pct}</td>
@@ -287,7 +287,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">11</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[10].name).logo} /> {this.props.easternStandings[10].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[10].win_pct}</td>
@@ -295,7 +295,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">12</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[11].name).logo} /> {this.props.easternStandings[11].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[11].win_pct}</td>
@@ -303,7 +303,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">13</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[12].name).logo} /> {this.props.easternStandings[12].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[12].win_pct}</td>
@@ -311,7 +311,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">14</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[13].name).logo} /> {this.props.easternStandings[13].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[13].win_pct}</td>
@@ -319,7 +319,7 @@ class NbaStandings extends React.Component {
     </tr>
     <tr>
       <th scope="row">15</th>
-      <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].name}</td>
+      <td>{this.props.easternStandings && this.state.allTeams.length > 0 ? <div className="squid"><img className='micro-logo' src={this.state.allTeams.find(team => team.name == this.props.easternStandings[14].name).logo} /> {this.props.easternStandings[14].name}</div> : null}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].wins}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].losses}</td>
       <td>{this.props.easternStandings == null ? null : this.props.easternStandings[14].win_pct}</td>
