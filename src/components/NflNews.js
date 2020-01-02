@@ -70,7 +70,7 @@ cleanArticles(array) {
 
 render() {
     return(
-            <div className="league-news-container"><h1>NEWS</h1>{this.state.articles.length === 0 ? <div>No news</div> : <div id="carouselExampleIndicators" className="carousel slide nfl" data-ride="carousel">
+            <div className="league-news-container"><h1 className="infrared">NEWS</h1>{this.state.articles.length === 0 ? <div>No news</div> : <div id="carouselExampleIndicators" className="carousel slide nfl" data-ride="carousel">
   <ol className="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
     {this.state.articles.slice(1).map(article => <li data-target="#carouselExampleIndicators" data-slide-to={this.state.articles.indexOf(article).toString()}></li>)}

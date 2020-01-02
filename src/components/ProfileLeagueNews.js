@@ -56,13 +56,13 @@ render() {
         <div className="user-leagues dash-section">
                         {/* <h3>Your Leagues</h3> */}
                         {/* {this.props.user.leagues.map(league => <h4>{league.name}</h4>)} */}
-                        <h4 className="jello" >Top Headlines:</h4>
+                        <h4 className="jello infrared" >Top Headlines:</h4>
                         <div className="dashboard-news">
-    {this.state.news == null ? 'No News' : this.state.news.map(article => <div className="top-headline-news"><img className="top-headline-img" align='left' src={article.urlToImage}/><p>{article.content.split('[+')[0]}</p><button onClick={this.openArticle} id={article.url} className="btn btn-primary article-btn">Read More</button> </div>)}
+    {this.state.news == null ? 'No News' : this.state.news.map(article => <div className="top-headline-news"><img className="top-headline-img" align='left' src={article.urlToImage}/><p className="infrared">{article.content.split('[+')[0]}</p><button onClick={this.openArticle} id={article.url} className="btn btn-primary article-btn">Read More</button> </div>)}
                     </div>
-                    <h4>UPCOMING GAMES:</h4>
+                    <h4 className="infrared">UPCOMING GAMES:</h4>
                     <div className="upcoming-games">
-    {this.state.games == null ? 'No Games' : this.state.games.map(game => <div className="daily-games"><img className="schedule-img" src={this.findTeam(game.away.id)} /> <p>VS</p> <img className="schedule-img" src={this.findTeam(game.home.id)} /> </div>)}
+    {this.state.games == null ? 'No Games' : this.state.games.map(game => <div className="daily-games"><img className="schedule-img" src={this.findTeam(game.away.id)} /> <p className="infrared">VS</p> <img className="schedule-img" src={this.findTeam(game.home.id)} /> </div>)}
                     </div>
                     </div>
         

@@ -33,11 +33,11 @@ class NFLUpcomingGames extends React.Component {
 render() {
     return(
         <div className="upcoming-games-container">
-            <h2>UPCOMING GAMES</h2>
+            <h2 className="infrared">UPCOMING GAMES</h2>
             <label for="start">Pick a Date:</label>
             <input type='date' id="start" name="game-day" value="2019-12-25" />
             <div className="Nba-upcoming-games">
-                {this.state.teams === null ? <GridLoader /> : this.props.games.map(game => <div className="daily-games"><img className="homepage-tm-img" src={this.findTeam(game.away.id)} /> <p>VS</p> <img className="homepage-tm-img" src={this.findTeam(game.home.id)} /> </div>)}
+                {this.state.teams === null ? <GridLoader /> : this.props.games.map(game => <div className="daily-games"><img className="homepage-tm-img" src={this.findTeam(game.away.id)} /> <p className="infrared vs">VS</p> <img className="homepage-tm-img" src={this.findTeam(game.home.id)} /> </div>)}
             </div>
             </div>
 

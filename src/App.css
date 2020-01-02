@@ -1,6 +1,7 @@
 .App {
   /* display: grid; */
   /* grid-template-columns: 1fr 1fr; */
+  background-color: black;
 }
 
 .App-logo {
@@ -39,18 +40,29 @@
 }
 
 .login-container {
-  display: flex
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9956aeaf-2c66-41ac-85e8-1423f66ad703/da3m158-7e85b9d5-c511-455a-b5e1-e3571c1f9fdf.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk5NTZhZWFmLTJjNjYtNDFhYy04NWU4LTE0MjNmNjZhZDcwM1wvZGEzbTE1OC03ZTg1YjlkNS1jNTExLTQ1NWEtYjVlMS1lMzU3MWMxZjlmZGYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yubn-dya0rErDPiLO1VH4RDXVXeRMWG98YL_YOqMmsk");
+  /* display: flex; */;
+  /* border: 1px solid red; */
+  height: 100vh;
 }
 
 .login-image-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 20px;
+  /* display: grid; */
+  /* width: 100 vw; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* column-gap: 20px; */
 }
 
 .login-image {
   /* height: 80vh; */
-  width: 50vw;
+  /* width: 100vw; */
+  /* background-image: ; */
+}
+
+.login-form {
+  position: absolute;
+  right: 6vw;
+  top: 8vw;
 }
 
 .navbar {
@@ -69,29 +81,44 @@
 
 .nba-pick-logo {
   height: 20vh;
-  animation: Slide_Up 1.4s;
+  /* animation: Slide_Up 1.4s; */
+}
+
+.home-loading {
+  height: 100vh;
+}
+
+.profile-page-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.nfl-shtuff {
+  height: 100vh;
 }
 
 .pick-leagues-container {
   height: 100vh;
   background-color: black;
   /* display: flex; */
+  /* border: 1px solid red; */
 }
 
 .nfl-pick-logo {
   height: 20vh;
-  animation: Slide_Up 3.4s;
+  /* animation: Slide_Up 3.4s; */
   /* animation-delay: 2.5s */
 }
 
 .epl-pick-logo {
   height: 20vh;
-  animation: Slide_Up 4.5s;
+  /* animation: Slide_Up 4.5s; */
 }
 
 .pick-logo-container {
   display: flex;
   justify-content: center;
+  /* border-left: 5px solid red; */
   /* grid-template-columns: 1fr 1fr; */
 }
 
@@ -114,15 +141,15 @@
 }
 
 .pick-name-nba {
-  animation: Slide_Left 1.4s
+  /* animation: Slide_Left 1.4s */
 }
 
 .pick-name-nfl {
-  animation: Slide_Left 3.4s
+  /* animation: Slide_Left 3.4s */
 }
 
 .pick-name-epl {
-  animation: Slide_Left 4.5s
+  /* animation: Slide_Left 4.5s */
 }
 
 .league-logo:hover {
@@ -226,7 +253,7 @@ tr {
   /* grid-column: 1/3; */
   display: grid;
   grid-template-columns: 10% 1fr 1fr 1fr;
-  border: 1px solid red
+  /* border: 1px solid red */
 }
 
 .micro-logo {
@@ -278,7 +305,12 @@ td {
 .profile-header {
   /* background-image: linear-gradient(#1D1160, #00788C); */
   display: grid;
-  grid-template-columns: 15% 1fr 1fr;
+  grid-template-columns: 15% 1fr 1fr auto;
+}
+
+.button-container {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .user-dashboard {
@@ -330,7 +362,13 @@ td {
 
 .daily-games {
   display: flex;
-  border: 1px solid red
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: center;
+}
+
+.vs {
+  font-size: 2.5em;
 }
 
 .schedule-img {
@@ -342,6 +380,11 @@ td {
   height: 40vh;
   width: auto;
 } */
+
+.Nba-upcoming-games {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 .NFL-news-container {
   /* display: grid;
@@ -378,13 +421,13 @@ td {
 
 .user-leagues {
   border: 1px solid red;
-  background-color: gray;
+  /* background-color: gray; */
 }
 
 
 .user-players {
   border: 1px solid green;
-  background-color: yellow;
+  background-color: black;
 }
 
 .player-index {
@@ -408,6 +451,20 @@ td {
   width: 100vw;
 }
 
+
+.scraping-header {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid red */
+}
+
+.scraper {
+  font-size: 5em;
+}
+.player-prof-user {
+  border-bottom: 1px solid red;
+}
+
 .nfl-player-banner {
   grid-column: 1/3;
   height: 25vh;
@@ -429,4 +486,8 @@ td {
   color: white;
   position: relative;
   z-index: 1;
+}
+
+.profile-container {
+  height: 130vh
 }

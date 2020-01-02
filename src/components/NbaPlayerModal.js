@@ -38,7 +38,7 @@ class NbaPlayerModal extends React.Component {
           >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
-              {this.props.player["full_name"]}
+              <h2 className="infrared">{this.props.player["full_name"]}</h2>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -49,13 +49,13 @@ class NbaPlayerModal extends React.Component {
                   <img src={this.props.player["headshot"]} />
               </div>
               <div className="player-modal-summary">
-        <h5>PPG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.points}</h5>
-            <h5>RPG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.rebounds}</h5>
-            <h5>APG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.assists}</h5>
-            <h5>FG PCT: {this.state.stats === null ? null : (this.state.stats.seasons[0].teams[0].average.field_goals_made / this.state.stats.seasons[0].teams[0].average.field_goals_att) }</h5>
+        <h3 className="infrared">PPG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.points}</h3>
+            <h3 className="infrared">RPG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.rebounds}</h3>
+            <h3 className="infrared">APG: {this.state.stats === null ? null : this.state.stats.seasons[0].teams[0].average.assists}</h3>
+            <h3 className="infrared">FG PCT: {this.state.stats === null ? null : (this.state.stats.seasons[0].teams[0].average.field_goals_made / this.state.stats.seasons[0].teams[0].average.field_goals_att) }</h3>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.fg_pct) : null}
-              <h4 className="player-college">College: {this.props.player["college"]} </h4>
+              <h4 className="player-college infrared">College: {this.props.player["college"]} </h4>
               </div>
               {/* <div className="modal-info">
                 hello

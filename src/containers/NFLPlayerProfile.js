@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 // import NbaPlayerNews from '../components/NBAPlayerNews'
 // import {viewNBAProfile} from '../actions/viewNBAProfile'
 import Loader from "../components/GridLoader"
-import LottieBBall from '../components/LottieBBall'
+import GridLoader from '../components/GridLoader'
 
 class NflPlayerProfile extends React.Component {
     state = {
@@ -32,8 +32,8 @@ class NflPlayerProfile extends React.Component {
             })
         })
         .then(resp => resp.json())
-        // .then(resp => this.setState({player: resp.player, articles: resp.articles}))
-        .then(resp => this.setState({player: resp.player}))
+        .then(resp => this.setState({player: resp.player, articles: resp.articles}))
+        // .then(resp => this.setState({player: resp.player}))
     }
 
     followPlayer = () => {
@@ -60,12 +60,12 @@ class NflPlayerProfile extends React.Component {
       }
 
 
-    makeNews = () => this.state.articles.map(article => <div><h3>{article.headline}</h3><p>{article.body}</p></div>)
+    makeNews = () => this.state.articles.map(article => <div><h3 className="infrared">{article.headline}</h3><p className="infrared">{article.body}</p></div>)
 
     render() {
         return(
             <div className="profile-container">
-                {this.state.player == null ? <LottieBBall /> : 
+                {this.state.player == null ? <div className="scraping-header"><h2 className="infrared scraper">GATHERING NEWS...<GridLoader /></h2> </div> : 
                 <div className="profile-header" style={{"background-image": `linear-gradient(#1c5b86, #237341)`}}>
                     <img src={this.state.player.headshot} />
                     <div>
@@ -80,7 +80,7 @@ class NflPlayerProfile extends React.Component {
                     </button>
                     </div>
                 </div>}
-                {/* {this.makeNews()} */}
+                {this.makeNews()}
             </div>
         )
     }

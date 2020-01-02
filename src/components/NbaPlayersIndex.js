@@ -117,7 +117,7 @@ class NbaPlayersIndex extends React.Component {
                 </div>
                 
             <div className="NBAplayers-container">
-                {this.state.filteredPlayers.length === 0 ? <LottieBBall /> : this.filterByName().map(player => <div className="player-container" key={player["NBARef"]}><h3 className="player-name">{player["full_name"]}</h3><img onClick={this.handleClick} id={player["NBARef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /><img className="team-logo-backdrop" src={player["team"]["logo"]} /> </div>)}
+                {this.state.filteredPlayers.length === 0 ?<div className="scraping-header"><h2 className="infrared scraper">FETCHING PLAYERS...<LottieBBall /></h2> </div> : this.filterByName().map(player => <div className="player-container" key={player["NBARef"]}><h3 className="player-name">{player["full_name"]}</h3><img onClick={this.handleClick} id={player["NBARef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /><img className="team-logo-backdrop" src={player["team"]["logo"]} /> </div>)}
             </div>
             {this.state.selectedPlayer == null ? null: <NbaPlayerModal player={this.state.selectedPlayer} show={this.state.modalShow} onHide={this.handleHide} />}
             </div>

@@ -24,8 +24,8 @@ class NbaStatsLeaders extends React.Component {
           return (
             <div className="stat">
             <img src={this.state.allPlayers.length > 0 ? this.state.allPlayers.find(playa => playa.NBARef === player.player.reference).headshot : null}/>
-            <h4>Player: {player.player.full_name}</h4>
-            <h4>PPG: {player.score}</h4>
+            <h4 className="infrared">Player: {player.player.full_name}</h4>
+            <h4 className="infrared">PPG: {player.score}</h4>
             </div>
           )
       })}
@@ -33,7 +33,7 @@ class NbaStatsLeaders extends React.Component {
 render() {
     return(
         <div className="all-stat-container">
-            <h3>LEAGUE LEADERS</h3>
+            <h3 className="infrared">LEAGUE LEADERS</h3>
         <div className="NBA-stats">
             {/* <div className = "stat">
                 <h2>Points</h2>
@@ -60,31 +60,31 @@ render() {
                 </div>
             </div> */}
             <div>
-            <h2>PPG</h2>
+            <h2 className="infrared">PPG</h2>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.ppg) : null}
             <div>
-            <h2>RPG</h2>
+            <h2 className="infrared">RPG</h2>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.rpg) : null}
             <div>
-            <h2>APG</h2>
+            <h2 className="infrared">APG</h2>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.apg) : null}
             <div>
-            <h2>THREES</h2>
+            <h2 className="infrared">THREES</h2>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.threePCT) : null}
             <div>
-            <h2>BLOCKS</h2>
+            <h2 className="infrared">BLOCKS</h2>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.blocks) : null}
             <div>
-            <h2>FG PCT</h2>
+            <h2 className="infrared">FG PCT</h2>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.fg_pct) : null}
             <div>
-            <h2>FT PCT</h2>
+            <h2 className="infrared statx">FT PCT</h2>
             </div>
             {this.props.stats ? this.generateStats(this.props.stats.ft_pct) : null}
         </div>

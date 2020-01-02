@@ -34,7 +34,7 @@ render() {
         <div>
             {this.state.user == null ? <LottieBBall /> : 
             <div>
-                <h2>{this.state.user.name}'s Dashboard</h2>
+                <h2 className="infrared">{this.state.user.name}'s Dashboard</h2>
                 <select name="teamFilter" form="teamFilter" onChange={this.changeDashboard} >
                     {this.state.user.leagues.map(league => <option value={league.name}>{league.name}</option>)}
                     {/* <option value="NBA">NBA</option> */}

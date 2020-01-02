@@ -28,7 +28,7 @@ class Home extends React.Component {
 render() {
     return(
         <div>
-            {this.state.user == null ? <LottieBBall /> : (this.state.user.leagues.length === 0 ? <Redirect to='/pickleagues' /> :  <UserProfile />)}
+            {this.state.user == null ? <div className="home-loading"> <LottieBBall /> </div> : (this.state.user.leagues.length === 0 ? <Redirect to='/pickleagues' /> :  <UserProfile />)}
         </div>
         // <div>{this.props.currentUser.leagues.length === 0 ? <Redirect to='/pickleagues'/> : <UserProfile />}</div>
     )
