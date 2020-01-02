@@ -79,8 +79,8 @@ render() {
     <div className="carousel-item active">
       <img className="d-block w-100" src={this.state.articles[0].urlToImage} alt="First slide" />
       <div className="carousel-caption d-none d-md-block">
-    <h5>{this.state.articles[0].title}</h5>
-    <p>{this.state.articles[0].content} <button id={this.state.articles[0].url} onClick={this.openArticle} className = 'btn btn-primary'>Read More</button></p>
+    <h5 className="sergio">{this.state.articles[0].title}</h5>
+    <p className="sergio">{this.state.articles[0].content} <button id={this.state.articles[0].url} onClick={this.openArticle} className = 'btn btn-primary'>Read More</button></p>
   </div>
     </div>
     {this.state.articles.slice(1).map(article => {
@@ -88,8 +88,8 @@ render() {
       <div className="carousel-item">
       <img className="d-block w-100" src={article.urlToImage} alt="Second slide" />
       <div className="carousel-caption d-none d-md-block">
-    <h5>{article.title}</h5>
-    <p>{article.content} <button id={article.url} onClick={this.openArticle} className = 'btn btn-primary'>Read More</button></p>
+    <h5 className="sergio">{article.title}</h5>
+    <p className="sergio">{article.content} <button id={article.url} onClick={this.openArticle} className = 'btn btn-primary'>Read More</button></p>
   </div>
      </div>)})}
   </div>
