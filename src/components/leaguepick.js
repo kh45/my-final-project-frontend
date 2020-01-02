@@ -78,9 +78,9 @@ render() {
         <div className="pick-leagues-container">
             <h1 className="infrared">Pick Your Leagues</h1>
             <div className="first-pick-container">
-                <div className="pick-logo-container"><img align="left" className="league-logo nba-pick-logo animated fadeInLeft delay-1s" alt="NBA" src={require('../assets/nbalogo.png')} onClick={this.whichLeague} /> <p className="pick-name pick-name-nba animated fadeInRight delay-1s">NBA</p> </div>
-                <div className="pick-logo-container"><img className="league-logo nfl-pick-logo animated fadeInLeft delay-2s" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /><p className="pick-name pick-name-nfl animated fadeInRight delay-2s">NFL</p> </div> 
-                <div className="pick-logo-container"><img className="league-logo epl-pick-logo animated fadeInLeft delay-3s" alt='EPL' src={require('../assets/PremierLogo.png')} onClick={this.whichLeague} /> <h4 className="pick-name pick-name-epl animated fadeInRight delay-3s">EPL</h4></div>
+                <div className="pick-logo-container"><div className="last"><img align="left" className="league-logo nba-pick-logo animated fadeInLeft delay-1s" alt="NBA" src={require('../assets/nbalogo.png')} onClick={this.whichLeague} /> <p className="pick-name pick-name-nba animated fadeInRight delay-1s">NBA</p> </div></div>
+                <div className="pick-logo-container"><div className="last"><img className="league-logo nfl-pick-logo animated fadeInLeft delay-2s" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /><p className="pick-name pick-name-nfl animated fadeInRight delay-2s">NFL</p> </div></div> 
+                <div className="pick-logo-container"><div className="last"><img className="league-logo epl-pick-logo animated fadeInLeft delay-3s" alt='EPL' src={require('../assets/PremierLogo.png')} onClick={this.whichLeague} /> <h4 className="pick-name pick-name-epl animated fadeInRight delay-3s">EPL</h4></div></div>
             </div>
             <Link to="/home"><button className="btn btn-primary">I'm done</button></Link>
         </div>
