@@ -47,7 +47,7 @@ render() {
         <div className="league-home-container">
             <div>
             <NbaNews />
-            <Link to="/nba/players"><button>View the PLayers</button></Link>
+            <Link to="/nba/players"><button className="btn btn-primary">View the Players</button></Link>
             </div>
             <NbaUpcomingGames games={this.state.games} />
             <NbaStandings />

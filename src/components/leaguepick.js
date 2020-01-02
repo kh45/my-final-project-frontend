@@ -82,7 +82,7 @@ render() {
                 <div className="pick-logo-container"><img className="league-logo nfl-pick-logo animated fadeInLeft delay-2s" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /><p className="pick-name pick-name-nfl animated fadeInRight delay-2s">NFL</p> </div> 
                 <div className="pick-logo-container"><img className="league-logo epl-pick-logo animated fadeInLeft delay-3s" alt='EPL' src={require('../assets/PremierLogo.png')} onClick={this.whichLeague} /> <h4 className="pick-name pick-name-epl animated fadeInRight delay-3s">EPL</h4></div>
             </div>
-            <Link to="/home"><button>I'm done</button></Link>
+            <Link to="/home"><button className="btn btn-primary">I'm done</button></Link>
         </div>
     )
 }

@@ -72,7 +72,7 @@ render() {
             id="password"
             placeholder="Password" />
         </p>
-        <input type="submit" />
+        <input type="submit" className="btn btn-primary" />
       </form>
       </div>
       {/* <img className="login-image" alt="hello" src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9956aeaf-2c66-41ac-85e8-1423f66ad703/da3m158-7e85b9d5-c511-455a-b5e1-e3571c1f9fdf.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk5NTZhZWFmLTJjNjYtNDFhYy04NWU4LTE0MjNmNjZhZDcwM1wvZGEzbTE1OC03ZTg1YjlkNS1jNTExLTQ1NWEtYjVlMS1lMzU3MWMxZjlmZGYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yubn-dya0rErDPiLO1VH4RDXVXeRMWG98YL_YOqMmsk' /> */}
