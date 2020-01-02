@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 import NflPlayerModal from './NflPlayerModal'
 import { useState } from 'react';
 // import Loader from './GridLoader'
-import LottieBBall from './LottieBBall'
+// import LottieBBall from './LottieBBall'
+import GridLoader from './GridLoader'
 
 class NFLPlayersIndex extends React.Component {
 
@@ -72,7 +73,12 @@ class NFLPlayersIndex extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="player-index">
+                <div className="nfl-player-banner">
+                    <img className="nfl-player-index-banner" src='https://i.pinimg.com/originals/5d/87/7d/5d877da2f01dac3631f807612ea8f413.jpg' />
+                </div>
+                <div className="filters">
+                <h4 className="filter-header">Filter By Team:</h4>
                 <select name="teamFilter" form="teamFilter" onChange={this.filterByTeam} >
                     <option value="All Teams">All Teams</option>
                     <option value="768c92aa-75ff-4a43-bcc0-f2798c2e1724">Buffalo Bills</option>
@@ -110,13 +116,14 @@ class NFLPlayersIndex extends React.Component {
                 </select>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Search By Name:
+                        <h4 className="filter-header">Filter By Team:</h4>
                     <input type="text" name="name" onChange={this.handleChange} />
                     </label>
                 </form>
+                </div>
                 
             <div className="NBAplayers-container">
-                {this.state.filteredPlayers.length === 0 ? <LottieBBall /> : this.filterByName().map(player => <div className="player-container" key={player["sportradarRef"]}><h3>{player["full_name"]}</h3><img className="team-logo-backdrop" src={player["team"]["logo"]} /><img onClick={this.handleClick} id={player["sportradarRef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /> </div>)}
+                {this.state.filteredPlayers.length === 0 ? <GridLoader /> : this.filterByName().map(player => <div className="player-container" key={player["sportradarRef"]}><h3>{player["full_name"]}</h3><img className="team-logo-backdrop" src={player["team"]["logo"]} /><img onClick={this.handleClick} id={player["sportradarRef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /> </div>)}
             </div>
             {this.state.selectedPlayer == null ? null: <NflPlayerModal player={this.state.selectedPlayer} show={this.state.modalShow} onHide={this.handleHide} />}
             </div>

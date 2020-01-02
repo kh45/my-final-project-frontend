@@ -30,7 +30,9 @@ class NbaNews extends React.Component {
     //  debugger
     this.setState({articles: new_articles})
  }
-
+  openArticle = (event) => {
+    window.open(event.target.id, "_blank");
+  }
 //  generateSlides = () => {
 //    debugger
 //    this.state.articles.map(article => {
@@ -60,7 +62,7 @@ render() {
       <img className="d-block w-100" src={this.state.articles[0].urlToImage} alt="First slide" />
       <div className="carousel-caption d-none d-md-block">
     <h5>{this.state.articles[0].title}</h5>
-    <p>{this.state.articles[0].content} <button className = 'btn btn-primary'>Read More</button></p>
+    <p>{this.state.articles[0].content} <button id={this.state.articles[0].url} onClick={this.openArticle} className='btn btn-primary'>Read More</button></p>
   </div>
     </div>
     {this.state.articles.slice(1).map(article => {
@@ -69,7 +71,7 @@ render() {
       <img className="d-block w-100" src={article.urlToImage} alt="Second slide" />
       <div className="carousel-caption d-none d-md-block">
     <h5>{article.title}</h5>
-    <p>{article.content} <button className = 'btn btn-primary'>Read More</button></p>
+    <p>{article.content} <button id={article.url} onClick={this.openArticle} className='btn btn-primary'>Read More</button></p>
   </div>
      </div>)})}
   </div>

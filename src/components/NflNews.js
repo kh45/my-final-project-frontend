@@ -12,22 +12,29 @@ class NflNews extends React.Component {
     }
     
 
- componentDidMount() {
-     fetch('http://localhost:3000/NFLHome', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept' : 'application/json'
-        },
-        body: JSON.stringify({
-            "standings" : 'update',
-        })
-    })
-     .then(resp => resp.json())
-     .then(resp => {
-        // console.log(resp)}) 
-        this.cleanArticles(resp.articles.articles)})
- }
+    state = {
+      articles: []
+  }
+  
+
+componentDidMount() {
+   fetch('https://newsapi.org/v2/everything?domains=nfl.com&apiKey=f44ccf725ca9471596da059a5defc2fc')
+   .then(resp => resp.json())
+   .then(resp => this.cleanArticles(resp.articles))
+}
+
+cleanArticles(array) {
+   let new_articles = array.filter(article => article.content != null)
+  //  debugger
+   new_articles.forEach(article => {
+       let indexOfArticle = new_articles.indexOf(article)
+       let new_content = article.content.split('[+')[0]
+      //  debugger
+       new_articles[indexOfArticle].content = new_content
+   })
+  //  debugger
+  this.setState({articles: new_articles})
+}
 
  cleanArticles(array) {
      let new_articles = array.filter(article => article.content != null)
@@ -41,6 +48,10 @@ class NflNews extends React.Component {
     //  debugger
     this.setState({articles: new_articles})
  }
+
+ openArticle = (event) => {
+  window.open(event.target.id, "_blank");
+}
 
 //  generateSlides = () => {
 //    debugger
@@ -59,7 +70,7 @@ class NflNews extends React.Component {
 
 render() {
     return(
-            <div className="NFL-news-container"><h1>NEWS</h1>{this.state.articles.length === 0 ? <div>No news</div> : <div id="carouselExampleIndicators" className="carousel slide nfl" data-ride="carousel">
+            <div className="league-news-container"><h1>NEWS</h1>{this.state.articles.length === 0 ? <div>No news</div> : <div id="carouselExampleIndicators" className="carousel slide nfl" data-ride="carousel">
   <ol className="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
     {this.state.articles.slice(1).map(article => <li data-target="#carouselExampleIndicators" data-slide-to={this.state.articles.indexOf(article).toString()}></li>)}
@@ -69,7 +80,7 @@ render() {
       <img className="d-block w-100" src={this.state.articles[0].urlToImage} alt="First slide" />
       <div className="carousel-caption d-none d-md-block">
     <h5>{this.state.articles[0].title}</h5>
-    <p>{this.state.articles[0].content} <button className = 'btn btn-primary'>Read More</button></p>
+    <p>{this.state.articles[0].content} <button id={this.state.articles[0].url} onClick={this.openArticle} className = 'btn btn-primary'>Read More</button></p>
   </div>
     </div>
     {this.state.articles.slice(1).map(article => {
@@ -78,7 +89,7 @@ render() {
       <img className="d-block w-100" src={article.urlToImage} alt="Second slide" />
       <div className="carousel-caption d-none d-md-block">
     <h5>{article.title}</h5>
-    <p>{article.content} <button className = 'btn btn-primary'>Read More</button></p>
+    <p>{article.content} <button id={article.url} onClick={this.openArticle} className = 'btn btn-primary'>Read More</button></p>
   </div>
      </div>)})}
   </div>

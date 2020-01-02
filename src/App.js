@@ -12,7 +12,7 @@ import Home from './containers/home'
 import LeaguePick from './components/leaguepick'
 import NavBar from './components/navbar'
 import NbaHome from './containers/NbaHome'
-import NflHome from './containers/NfHome'
+import NflHome from './containers/NflHome'
 import NbaPlayersIndex from './components/NbaPlayersIndex'
 import NFLPlayersIndex from './components/NFLPlayersIndex'
 import 'bootstrap/dist/css/bootstrap.min.css';

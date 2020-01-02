@@ -71,7 +71,10 @@ class NbaPlayersIndex extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="player-index">
+                <img className="nba-player-index-banner" src='https://cdn.elitesportsny.com/wp-content/uploads/2019/02/banner_nba.jpg' />
+                <div className="filters">
+                <h4 className="filter-header">Filter By Team:</h4>
                 <select name="teamFilter" form="teamFilter" onChange={this.filterByTeam} >
                     <option value="All Teams">All Teams</option>
                     <option value="583ecb8f-fb46-11e1-82cb-f4ce4684ea4c">Atlanta Hawks</option>
@@ -107,13 +110,14 @@ class NbaPlayersIndex extends React.Component {
                 </select>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Search By Name:
+                    <h4 className="filter-header">Search By Name:</h4>
                     <input type="text" name="name" onChange={this.handleChange} />
                     </label>
                 </form>
+                </div>
                 
             <div className="NBAplayers-container">
-                {this.state.filteredPlayers.length === 0 ? <LottieBBall /> : this.filterByName().map(player => <div className="player-container" key={player["NBARef"]}><h3>{player["full_name"]}</h3><img className="team-logo-backdrop" src={player["team"]["logo"]} /><img onClick={this.handleClick} id={player["NBARef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /> </div>)}
+                {this.state.filteredPlayers.length === 0 ? <LottieBBall /> : this.filterByName().map(player => <div className="player-container" key={player["NBARef"]}><h3 className="player-name">{player["full_name"]}</h3><img onClick={this.handleClick} id={player["NBARef"]} data-toggle="modal" data-target={player["NBARef"]} className="player-pic" src={player["headshot"]} /><img className="team-logo-backdrop" src={player["team"]["logo"]} /> </div>)}
             </div>
             {this.state.selectedPlayer == null ? null: <NbaPlayerModal player={this.state.selectedPlayer} show={this.state.modalShow} onHide={this.handleHide} />}
             </div>

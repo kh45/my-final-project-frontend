@@ -44,7 +44,7 @@ class NbaHome extends React.Component {
 
 render() {
     return(
-        <div className="NBA-home-container">
+        <div className="league-home-container">
             <div>
             <NbaNews />
             <Link to="/nba/players"><button>View the PLayers</button></Link>
