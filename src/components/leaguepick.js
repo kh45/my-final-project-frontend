@@ -52,7 +52,7 @@ addThisLeague = (league) => {
 render() {
     return(
         <div className="pick-leagues-container">
-            <h1>Pick Your Leagues</h1>
+            <h1 className="infrared">Pick Your Leagues</h1>
             <div className="first-pick-container">
                 <div className="pick-logo-container"><img align="left" className="league-logo nba-pick-logo" alt="NBA" src={require('../assets/nbalogo.png')} onClick={this.whichLeague} /> <p className="pick-name pick-name-nba">NBA</p> </div>
                 <div className="pick-logo-container"><img className="league-logo nfl-pick-logo" alt='NFL' src={require('../assets/NFLlogo.png')} onClick={this.whichLeague} /><p className="pick-name pick-name-nfl">NFL</p> </div> 
