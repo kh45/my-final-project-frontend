@@ -367,6 +367,12 @@ td {
   justify-content: center;
 }
 
+.intro {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px white;
+}
+
 .vs {
   font-size: 2.5em;
 }

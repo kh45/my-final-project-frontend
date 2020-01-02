@@ -56,7 +56,7 @@ render() {
     return(
         <div className="login-container">
             <div className="login-form">
-                <h2>My Decent App</h2>
+                <h1 className="intro">SportsScraper</h1>
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
                 <p>
           <input
